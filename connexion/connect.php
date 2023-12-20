@@ -1,6 +1,4 @@
-
 <?php
-
 try {
     $dsn = 'mysql:host=localhost;dbname=tp_quizz';
 
@@ -13,5 +11,4 @@ try {
 } catch (Exception $message) {
     echo 'error' . $message;
 }
-
 ?>
