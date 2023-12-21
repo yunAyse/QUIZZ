@@ -14,9 +14,9 @@ include_once('../process/start-process.php');
         <!-- il envoie a response-process qui va compter le score et renvoie a question-process pour regene question-->
         <form action="../process/response-process.php" method="post">
 
-            <button type="submit" name="response1"><?php echo [$result[0]] ?></button>
-            <button type="submit" name="response2"><?php echo [$result[1]] ?></button>
-            <button type="submit" name="response3"><?php echo[$result[2]] ?></button>
+            <button type="submit" name="response1"><?php echo $resultEchoRandom[0];?></button>
+            <button type="submit" name="response2"><?php echo $resultEchoRandom[1];?></button>
+            <button type="submit" name="response3"><?php echo $resultEchoRandom[2];?></button>
 
         </form>
 
