@@ -3,19 +3,20 @@
 require_once('../connexion/connect.php');
 include_once('../partials/header.php');
 include_once('../partials/footer.php');
-include_once('../process/start-process.php')
+include_once('../process/question-process.php')
 
 ?>
 <section class="text-center">
     <h1>Question</h1>
 
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium repudiandae eligendi, temporibus inventore enim assumenda nulla qui.</p>
+    <p><?php echo $joinresponseAndQuestions['question'] ?></p>
     <div class="text-center">
-        <form action="../process/question-process.php" method="post">
+        <!-- il envoie a response-process qui va compter le score et renvoie a question-process pour regene question-->
+        <form action="../process/response-process.php" method="post">
 
-            <button type="submit" name="response1">response</button>
-            <button type="submit" name="response2">response</button>
-            <button type="submit" name="response3">response</button>
+            <button type="submit" name="response1"><?php [$rand_keys[0]] ?></button>
+            <button type="submit" name="response2"><?php [$rand_keys[1]] ?></button>
+            <button type="submit" name="response3"><?php [$rand_keys[2]] ?></button>
 
         </form>
 
