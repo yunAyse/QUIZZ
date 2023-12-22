@@ -36,5 +36,4 @@ $userStartQuestion = $request->fetchAll();
 } else {
   header('Location: ../index.php');
 }
-header('Location: ../page/start.php');
 ?>

@@ -3,6 +3,8 @@ require('../connexion/connect.php');
 include_once('../partials/header.php');
 include_once('../partials/footer.php');
 
+include_once('../process/start-process.php');
+
 ?>
 
 <!-- le bouton va générer le start process. -->
