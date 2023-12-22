@@ -24,4 +24,7 @@ foreach ($questions as $question) {
 
         $resultResponses =  $response['1'];
     };
+ 
 }
+
+header('Location: ../page/question.php');

@@ -3,15 +3,14 @@
 require_once('../connexion/connect.php');
 include_once('../partials/header.php');
 include_once('../partials/footer.php');
-include_once('../process/question-process.php');
 
-include_once('../process/start-process.php');
+// include_once('../process/start-process.php');
 
 ?>
 <section class="text-center">
     <h1>Question</h1>
 
-    <p><?php echo $joinresponseAndQuestions['question'] ?></p>
+    <p><?php echo $selectQuestion ?></p>
     <div class="text-center">
         <!-- il envoie a response-process qui va compter le score et renvoie a question-process pour regene question-->
         <form action="../process/response-process.php" method="post">
