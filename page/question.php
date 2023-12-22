@@ -9,6 +9,7 @@ include_once('../process/start-process.php');
 <section class="text-center">
     <h1>Question</h1>
 
+
     <p><?php echo $resultQuestion ?></p>
     <div class="text-center">
         <!-- il envoie a response-process qui va compter le score et renvoie a question-process pour regene question-->

@@ -29,9 +29,11 @@ $resultQuestion = $question['1'];
 $requestrandom = $db->query("SELECT* FROM response WHERE question_id = $selectQuestion ORDER BY RAND() ");
 $resultRandom = $requestrandom->fetchAll();
 $results = $resultRandom;
+
 foreach ($results as $result) {
     $resultEchoRandom[] = $result['1'];
 }
+
 
 
 
