@@ -4,7 +4,6 @@ require_once('./connexion/connect.php');
 include_once('./partials/header.php');
 include_once('./partials/footer.php');
 
-
 ?>
 
 <section class="vh-100 d-flex">
@@ -15,10 +14,15 @@ include_once('./partials/footer.php');
         <label for="pseudo" class="text-light mb-1">Pseudo :</label>
 
         <div class="input d-flex flex-column align-items-center w-100">
+
           <form action="./process/create-user-process.php" method="post">
+
             <input type="text" name="pseudo" id="pseudo" class="rounded border-1 mb-4 w-100 text-light" style="background-color: #242424">
+
             <button type="submit"  class="rounded-pill border-1 mb-4 w-50 text-light" style="background-color: #242424">CREATE</button>
+
           </form>
+
         </div>
         
       </div>

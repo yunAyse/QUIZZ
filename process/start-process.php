@@ -1,9 +1,18 @@
 
 <?php
 require_once('../connexion/connect.php');
+session_start();
 
-// envoila liaison de table a question_process.php
-$varId = 2;
+// var_dump($_SESSION['user']);
+
+$initCount = $_SESSION['user']['count'];
+$initscore = $_SESSION['user']['score'];
+
+$countquestion = $initCount;
+$varId = $countquestion;
+
+
+
 $request = $db->prepare("SELECT *  FROM question WHERE id = $varId");
 $request->execute();
 $questions = $request->fetchAll();
@@ -24,12 +33,12 @@ foreach ($questions as $question) {
     
     };
 } 
+
 $resultQuestion = $question['1'];
 // random response
 $requestrandom = $db->query("SELECT* FROM response WHERE question_id = $selectQuestion ORDER BY RAND() ");
 $resultRandom = $requestrandom->fetchAll();
 $results = $resultRandom;
-
 foreach ($results as $result) {
     $resultEchoRandom[] = $result['1'];
 }
