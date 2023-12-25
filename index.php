@@ -4,10 +4,9 @@ require_once('./connexion/connect.php');
 include_once('./partials/header.php');
 include_once('./partials/footer.php');
 
-
 ?>
 
-<section class="vh-100 d-flex">
+<section class="min-vh d-flex">
   <div class="container-md d-flex justify-content-center align-items-center" id="user_create-card">
     <div class="card" style="width: 20rem; background-color: #465362 ">
       <div class="card-body d-flex flex-column ">

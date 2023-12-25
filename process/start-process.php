@@ -2,11 +2,13 @@
 <?php
 require_once('../connexion/connect.php');
 
+
 // envoila liaison de table a question_process.php
 $varId = 2;
 $request = $db->prepare("SELECT *  FROM question WHERE id = $varId");
 $request->execute();
 $questions = $request->fetchAll();
+
 
 $result =[];
 
