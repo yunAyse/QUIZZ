@@ -1,10 +1,7 @@
 <?php
 
 require_once('../connexion/connect.php');
-
 session_start();
-
-
 
 if (isset($_POST['pseudo']) && !empty($_POST['pseudo'])) {
     // init 3 values
@@ -47,7 +44,6 @@ if (isset($_POST['pseudo']) && !empty($_POST['pseudo'])) {
         $request = $db->query($sql);
         $score = $request->fetchColumn();
         $_SESSION['user']['score'] = $score;
-    }
-
-    header('Location: ../page/start.php');
+    }   
 }
+ header('Location: ../page/start.php');
