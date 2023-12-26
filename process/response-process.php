@@ -13,27 +13,27 @@ if (isset($_POST['responseuser']) && !empty($_POST['responseuser'])) {
     $request->execute();
     $jointArray = $request->fetch();
     // init les deux valeurs de comparaison tableau et response
-   
+
     $compareStringArray = $jointArray['response'];
- 
+
     $compareStringPost = $_POST['responseuser'];
     // comparé les deux chaine de caracter
     if (strcmp($compareStringArray, $compareStringPost) == 0) {
         // ajouter un point si la chaine de caracter est la meme 
         $addScrore++;
-        
+
         $_SESSION['user']['score'] = $addScrore;
-        
+
         // mise a jour dans $db
         $user = [
             'pseudo' => $pseudo,
             'score' => $addScrore,
         ];
         $sql = "UPDATE user SET pseudo=:pseudo, score=:score WHERE pseudo = :pseudo ";
-        $stmt= $db->prepare($sql);
+        $stmt = $db->prepare($sql);
         $stmt->execute($user);
     }
-    $responseOfQuestion++;
-   $_SESSION['user']['count'] = $responseOfQuestion ;
 }
+$responseOfQuestion++;
+$_SESSION['user']['count'] = $responseOfQuestion;
 header('Location: ../page/question.php');

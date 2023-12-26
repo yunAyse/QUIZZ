@@ -1,12 +1,14 @@
 
 <?php
 require_once('../connexion/connect.php');
+
 // initi des question
 $addCount = $_SESSION['user']['count'];
 
 $request = $db->prepare("SELECT *  FROM question WHERE id = $addCount");
 $request->execute();
 $questions = $request->fetch();
+
 if ($questions == null) {
     header('Location: ../index.php');
 }
