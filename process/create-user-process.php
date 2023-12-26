@@ -8,11 +8,12 @@ if (isset($_POST['pseudo']) && !empty($_POST['pseudo'])) {
     $score = 0;
     $count = 1;
     $pseudo = $_POST['pseudo'];
+    
     // created array for $_SESSION
     $user = [
         'pseudo' => $pseudo,
         'score' => $score,
-        'count' => $count
+        'count' => $count,
     ];
     // created $_SESSION
     $_SESSION['user'] = $user;

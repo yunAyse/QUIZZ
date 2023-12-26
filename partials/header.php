@@ -1,3 +1,6 @@
+<?php
+session_start()
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,11 +29,13 @@
           <div class="offcanvas-body text-light">
             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
               <li class="nav-item">
-                <p>user</p>
+                <?php
+                $display = $_SESSION['user']; 
+                $display = implode('',$display);
+                echo $display;
+                ?>
               </li>
-              <li class="nav-item">
-                user
-              </li>
+
             </ul>
           </div>
         </div>

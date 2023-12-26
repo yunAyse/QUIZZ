@@ -3,8 +3,6 @@ require_once('../connexion/connect.php');
 include_once('../partials/header.php');
 include_once('../partials/footer.php');
 include_once('../process/start-process.php');
-// $displayQuestion = implode('--', $questions);
-
 ?>
 
 <section class="text-center">
@@ -32,7 +30,7 @@ include_once('../process/start-process.php');
         <div class="text-start mx-4">
             <p><?php echo $_SESSION['user']['score'] ?></p>
 
-            <p>top 1 </p>
+            <p>top 1 <?php echo $_SESSION['user']['pseudo'];echo $_SESSION['user']['score'] ?> </p>
             <p>top 2</p>
             <p>top 3</p>
         </div>
