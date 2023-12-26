@@ -1,21 +1,13 @@
 
 <?php
 require_once('../connexion/connect.php');
-session_start();
 
-// var_dump($_SESSION['user']);
-
-$initCount = $_SESSION['user']['count'];
-$initscore = $_SESSION['user']['score'];
-
-$countquestion = $initCount;
-$varId = $countquestion;
-
-
-
+// envoila liaison de table a question_process.php
+$varId = 2;
 $request = $db->prepare("SELECT *  FROM question WHERE id = $varId");
 $request->execute();
 $questions = $request->fetchAll();
+
 
 $result =[];
 
