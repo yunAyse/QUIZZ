@@ -2,6 +2,7 @@
 require('../connexion/connect.php');
 include_once('../partials/header.php');
 include_once('../partials/footer.php');
+
 ?>
 <!-- le bouton va générer le start process. -->
 <section class="vh-100 d-flex">

@@ -4,16 +4,23 @@ require_once('../connexion/connect.php');
 session_start();
 
 if (isset($_POST['pseudo']) && !empty($_POST['pseudo'])) {
+    
+    
+
+
     // init 3 values
     $score = 0;
     $count = 1;
     $pseudo = $_POST['pseudo'];
+
+
     // created array for $_SESSION
     $user = [
         'pseudo' => $pseudo,
         'score' => $score,
-        'count' => $count
+        'count' => $count,
     ];
+
     // created $_SESSION
     $_SESSION['user'] = $user;
 
@@ -37,13 +44,13 @@ if (isset($_POST['pseudo']) && !empty($_POST['pseudo'])) {
                 'pseudo' => $pseudo,
                 'score' => $score
             ]
-        );      
+        );
     } else {
 
         $sql = "SELECT score FROM user WHERE pseudo = $pseudo";
         $request = $db->query($sql);
         $score = $request->fetchColumn();
         $_SESSION['user']['score'] = $score;
-    }   
+    }
 }
- header('Location: ../page/start.php');
+header('Location: ../page/start.php');
