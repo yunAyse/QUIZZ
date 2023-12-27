@@ -6,8 +6,6 @@ print_r($_SESSION['user']);
 $sql = "SELECT pseudo, score FROM user ORDER BY score DESC LIMIT 10";
 $request = $db->query($sql);
 $chartTopTens = $request->fetchAll();
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,11 +39,9 @@ $chartTopTens = $request->fetchAll();
               foreach ($chartTopTens as $chartTopTen) {
                 $addpseudo = $chartTopTen['pseudo'];
                 $addscore = $addScore = $chartTopTen['score'];
-                // var_dump($chartShow[0][0]);
-              
               ?>
                 <li class="nav-item">
-                  <?php echo $addpseudo,' ',$addScore ?>
+                  <?php echo $addpseudo, ' ', $addScore ?>
                 </li>
               <?php
               }
@@ -56,8 +52,4 @@ $chartTopTens = $request->fetchAll();
       </div>
     </nav>
   </header>
-
-  <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam impedit fuga nesciunt, quas voluptatum, itaque provident repudiandae inventore magnam sint mollitia reiciendis consequuntur a, ipsum in eum animi commodi eos?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae repellat deleniti placeat voluptatum quas dolorem quisquam et blanditiis optio assumenda, eum vel modi cupiditate laudantium ipsam laborum impedit numquam
-  </p>
   <?php
