@@ -3,7 +3,7 @@ require_once('../connexion/connect.php');
 session_start();
 
 $responseOfQuestion = $_SESSION['user']['count'];
-$addScrore =  $_SESSION['user']['score'];
+$addScore =  $_SESSION['user']['score'];
 $pseudo = $_SESSION['user']['pseudo'];
 
 if (isset($_POST['responseuser']) && !empty($_POST['responseuser'])) {
@@ -20,20 +20,25 @@ if (isset($_POST['responseuser']) && !empty($_POST['responseuser'])) {
     // comparé les deux chaine de caracter
     if (strcmp($compareStringArray, $compareStringPost) == 0) {
         // ajouter un point si la chaine de caracter est la meme 
-        $addScrore++;
+        $addScore++;
 
-        $_SESSION['user']['score'] = $addScrore;
+        $_SESSION['user']['score'] = $addScore;
 
         // mise a jour dans $db
         $user = [
             'pseudo' => $pseudo,
-            'score' => $addScrore,
+            'score' => $addScore,
         ];
         $sql = "UPDATE user SET pseudo=:pseudo, score=:score WHERE pseudo = :pseudo ";
         $stmt = $db->prepare($sql);
         $stmt->execute($user);
-    }
+
+    } 
 }
 $responseOfQuestion++;
 $_SESSION['user']['count'] = $responseOfQuestion;
+?>
+
+<?php
 header('Location: ../page/question.php');
+?>

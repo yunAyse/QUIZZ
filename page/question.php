@@ -3,8 +3,9 @@ require_once('../connexion/connect.php');
 include_once('../partials/header.php');
 include_once('../partials/footer.php');
 include_once('../process/start-process.php');
+include_once('../process/response-process.php');
 
-$chronometerDuration = 3; // Durée en secondes
+$chronometerDuration = 5; // Durée en secondes
 
 // Moment du début du chronomètre
 $startTime = time();
@@ -33,6 +34,7 @@ if (!isset($_COOKIE['startTime'])) {
                     <button type="submit" name="responseuser" value="<?php echo $resultEchoRandom[2]; ?>"><?php echo $resultEchoRandom[2]; ?></button>
                 </form>
             </div>
+
 
             <!-- Affichage du chronomètre -->
             <div class="mt-5">Temps restant : <span id="countdown"><?php echo $formattedTime; ?></span></div>
