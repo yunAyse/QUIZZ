@@ -13,7 +13,6 @@ if (isset($_POST['responseuser']) && !empty($_POST['responseuser'])) {
     $request->execute();
     $jointArray = $request->fetch();
     // init les deux valeurs de comparaison tableau et response
-
     $compareStringArray = $jointArray['response'];
 
     $compareStringPost = $_POST['responseuser'];
