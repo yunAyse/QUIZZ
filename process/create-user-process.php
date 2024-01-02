@@ -52,5 +52,5 @@ if (isset($_POST['pseudo']) && !empty($_POST['pseudo'])) {
         $score = $request->fetchColumn();
         $_SESSION['user']['score'] = $score;
     }
-}
+} 
 header('Location: ../page/start.php');

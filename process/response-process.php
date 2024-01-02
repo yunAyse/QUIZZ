@@ -31,12 +31,16 @@ if (isset($_POST['responseuser']) && !empty($_POST['responseuser'])) {
         $sql = "UPDATE user SET pseudo=:pseudo, score=:score WHERE pseudo = :pseudo ";
         $stmt = $db->prepare($sql);
         $stmt->execute($user);
+}
 
-    } 
 }
 $responseOfQuestion++;
 $_SESSION['user']['count'] = $responseOfQuestion;
 ?>
+
+
+
+
 
 <?php
 header('Location: ../page/question.php');
