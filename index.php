@@ -39,8 +39,8 @@ include_once('./process/classement_process.php');
           <li class="list-group-item d-flex justify-content-between align-items-start">
             <div class="ms-2 me-auto">
               <div class="fw-bold">
-                <?php echo 'VOTRE SCORE : ', $_SESSION['user']['pseudo'] ?>
-                <?php echo $_SESSION['user']['score'], ' pts' ?>
+                <?php echo 'VOTRE SCORE : ', $_SESSION['user']['pseudo']?$_SESSION['user']['pseudo']:''?>
+                <?php echo $_SESSION['user']['score']?$_SESSION['user']['score']:0 , ' pts' ?>
               </div>
             </div>
           </li>

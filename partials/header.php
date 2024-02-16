@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-print_r($_SESSION['user']);
+// print_r($_SESSION['user']);
 // recuperation tableau pour score page index
 $sql = "SELECT pseudo, score FROM user ORDER BY score DESC LIMIT 10";
 $request = $db->query($sql);

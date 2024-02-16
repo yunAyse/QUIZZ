@@ -2,11 +2,16 @@
 require_once('../connexion/connect.php');
 session_start();
 
+
+if (isset($_POST['responseuser']) && !empty($_POST['responseuser'])) {
+
 $responseOfQuestion = $_SESSION['user']['count'];
 $addScore =  $_SESSION['user']['score'];
 $pseudo = $_SESSION['user']['pseudo'];
 
-if (isset($_POST['responseuser']) && !empty($_POST['responseuser'])) {
+
+
+
     // lier les tableau question response et recuperé la valeur true
     $sql = "SELECT * FROM question JOIN response ON user_id = question_id WHERE question_id = $responseOfQuestion AND response_true ";
     $request = $db->query($sql);
