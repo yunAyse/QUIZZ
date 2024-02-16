@@ -31,7 +31,7 @@ CREATE TABLE `question` (
   `id` int NOT NULL,
   `question` varchar(255) NOT NULL,
   `user_id` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `question`
@@ -66,7 +66,7 @@ CREATE TABLE `response` (
   `response` varchar(255) NOT NULL,
   `response_true` tinyint(1) NOT NULL,
   `question_id` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `response`
@@ -132,7 +132,7 @@ CREATE TABLE `user` (
   `id` int NOT NULL,
   `pseudo` varchar(255) NOT NULL,
   `score` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `user`
